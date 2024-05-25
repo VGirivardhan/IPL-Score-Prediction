@@ -11,7 +11,37 @@
       rel="shortcut icon"
       href="{{ url_for('static', filename='ipl-favicon.ico') }}"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-image: url("static/Designer.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .card {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.5
+        ); /* Transparent white color */
+        color: rgb(0, 0, 0);
+      }
+      .contact-icon {
+        color: rgb(0, 0, 0);
+        margin: 0 10px;
+      }
+      .carousel-container {
+        margin-top: 30px;
+      }
 
+      h1 {
+        white-space: nowrap; /* Ensure h1 stays in one line */
+      }
+    </style>
     <script
       src="https://kit.fontawesome.com/f13b0bc903.js"
       crossorigin="anonymous"
@@ -19,41 +49,62 @@
   </head>
 
   <body>
-    <h1>IPL Batting Score Predictor 🏆</h1>
+    <div class="text-center">
+      <h1 class="mb-0">
+        <div style="color: rgb(255, 255, 255)">
+          IPL Batting Score Predictor 🏆
+        </div>
+      </h1>
+    </div>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <center>
+                <p style="font-size: 30px">
+                  The final predicted score (range):<br />
+                  {{ lower_limit }} to {{ upper_limit }}
+                </p>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <p style="font-size: 20px; color: rgb(0, 0, 0); text-align: center">
+            Made by Girivardhan
+          </p>
+          <div class="text-center">
+            <a href="https://github.com/VGirivardhan" class="contact-icon"
+              ><i class="fab fa-github fa-lg"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/girivardhan-velpula/"
+              class="contact-icon"
+              ><i class="fab fa-linkedin fa-lg"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Result -->
-    <div class="register">
+    <div class="carousel-container">
       <center>
-        <p style="font-size: 30px">
-          The final predicted score (range):<br />
-          {{ lower_limit }} to {{ upper_limit }}
-        </p>
-        <br /><br />
+        <carousel>
+          <img src="{{ url_for('static', filename= 'mi1.jpg') }}" />
+          <img src="{{ url_for('static', filename= 'srh1.png') }}" />
+          <img src="{{ url_for('static', filename= 'rcb1.png') }}" />
+          <img src="{{ url_for('static', filename= 'dc1.png') }}" />
+          <img src="{{ url_for('static', filename= 'rr1.png') }}" />
+          <img src="{{ url_for('static', filename= 'kkr1.jpg') }}" />
+          <img src="{{ url_for('static', filename= 'kxip1.png') }}" />
+          <img src="{{ url_for('static', filename= 'csk1.png') }}" />
+        </carousel>
       </center>
     </div>
-    <br /><br /><br />
-    <center>
-      <p style="font-size: 20px">Made by Girivardhan</p>
-      <br />
-
-      <a href="https://github.com/VGirivardhan"
-        ><i class="fab fa-github fa-lg contact-icon"></i></a
-      >&nbsp;&nbsp;
-      <a href="https://www.linkedin.com/in/girivardhan-velpula/"
-        ><i class="fab fa-linkedin fa-lg contact-icon"></i></a
-      ><br /><br />
-    </center>
-    <center>
-      <carousel>
-        <img src="{{ url_for('static', filename= 'mi1.jpg') }}" />
-        <img src="{{ url_for('static', filename= 'srh1.png') }}" />
-        <img src="{{ url_for('static', filename= 'rcb1.png') }}" />
-        <img src="{{ url_for('static', filename= 'dc1.png') }}" />
-        <img src="{{ url_for('static', filename= 'rr1.png') }}" />
-        <img src="{{ url_for('static', filename= 'kkr1.jpg') }}" />
-        <img src="{{ url_for('static', filename= 'kxip1.png') }}" />
-        <img src="{{ url_for('static', filename= 'csk1.png') }}" />
-      </carousel>
-    </center>
   </body>
 </html>
